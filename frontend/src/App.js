@@ -27,7 +27,7 @@ const [loading, setLoading] = useState(false);
 setLoading(true);
  setResponse("Loading: Uploading your file..."); 
 
- const res = await fetch("http://localhost:5000/upload", {
+ const res = await fetch("https://hackodisha-ikai.onrender.com/upload", {
  method: "POST",
  body: formData,
  });
@@ -61,7 +61,7 @@ return;
  setResponse("Loading: Processing your question..."); 
 
 // Step 1: Query API
- const res = await fetch("http://localhost:5000/query", {
+ const res = await fetch("https://hackodisha-ikai.onrender.com/query", {
  method: "POST",
  headers: { "Content-Type": "application/json" },
  body: JSON.stringify({ question: query }),
@@ -74,7 +74,7 @@ return;
  }
 
  // Step 2: Summarize API
- const sumRes = await fetch("http://localhost:5000/summarize", {
+ const sumRes = await fetch("https://hackodisha-ikai.onrender.com/summarize", {
  method: "POST",
  headers: { "Content-Type": "application/json" },
  body: JSON.stringify({ question: query, result: data.result }),
